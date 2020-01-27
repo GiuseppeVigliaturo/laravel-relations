@@ -22,9 +22,9 @@ class Post extends Model
     {
         return $this->belongsTo('App\Category');
     }
-    public function posts(){
+    public function tags(){
          
-        return $this -> belongsToMany(Post::class);
+        return $this -> belongsToMany('App\Tag','post_tag');
     }
 
 }

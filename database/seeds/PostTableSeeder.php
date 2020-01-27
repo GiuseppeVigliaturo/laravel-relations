@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use App\PostInformation;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
