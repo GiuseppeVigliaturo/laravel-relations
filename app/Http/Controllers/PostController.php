@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -16,6 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate();
+        
 
         return view('index', compact('posts'));
     }

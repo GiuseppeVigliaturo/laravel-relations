@@ -13,4 +13,7 @@
 
 Route::redirect('/', '/posts');
 
+Route::get('/home', 'MainController@index') -> name('home.index');
+
+
 Route::resource('posts', 'PostController');
