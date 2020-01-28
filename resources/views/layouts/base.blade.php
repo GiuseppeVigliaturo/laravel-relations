@@ -9,6 +9,10 @@
 </head>
 <body>
     
+    <header>
+        HEADER <br>
+    <a href="{{route('post.create')}}"> CREATE NEW POST</a>
+    </header>
     <div class="container">
         @yield('content')
     </div>

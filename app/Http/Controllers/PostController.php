@@ -29,7 +29,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        dd('da creare');
+        // in questo caso se voglio avere la possibilità di associare 
+        // dei tag a un post che vado a creare devo poter mandare i tag 
+        // esistenti nella pag del form e quindi faccio la compact per inviare i dati necessari  
+        $tags = Tag::all();
+       return view('pages.post-create', compact('tags'));
     }
 
     /**
@@ -40,7 +44,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd('da creare');
+        $data = $request -> all();
+        $post = Post::create($data);
+
+        // vado prima a cercarmi i tags e li metto in un array 
+        $tags = Tag::find($data['tags']);
+        // poi successivamente associo questi tag ad un post
+        $post -> tags() -> attach($tags);
+        return redirect() -> route('post.index');
     }
 
     /**
